@@ -1,0 +1,13 @@
+promo_id,producto_id,zona,canal,fecha_inicio,fecha_fin,tipo,valor,estado
+PR000,P009,Sur,moderno,2026-06-04,2026-06-12,precio_fijo,49.13,cerrada
+PR001,P020,Bajio,conveniencia,2026-06-11,2026-06-21,2x1,0.0,activa
+PR002,P012,Centro,mayoreo,2026-06-12,2026-06-24,precio_fijo,38.87,activa
+PR003,P011,Centro,tradicional,2026-06-06,2026-06-15,2x1,0.0,activa
+PR004,P014,Centro,mayoreo,2026-06-12,2026-06-26,descuento_pct,20.0,activa
+PR005,P018,Sur,mayoreo,2026-06-02,2026-06-15,2x1,0.0,activa
+PR006,P010,Norte,mayoreo,2026-06-10,2026-06-19,descuento_pct,25.0,activa
+PR007,P013,Bajio,conveniencia,2026-06-08,2026-06-21,descuento_pct,10.0,activa
+PR008,P005,Norte,moderno,2026-06-06,2026-06-13,2x1,0.0,cerrada
+PR009,P001,Norte,mayoreo,2026-06-07,2026-06-21,2x1,0.0,activa
+PR010,P008,Bajio,tradicional,2026-06-03,2026-06-14,descuento_pct,25.0,cerrada
+PR011,P009,Norte,tradicional,2026-06-13,2026-06-23,2x1,0.0,activa
