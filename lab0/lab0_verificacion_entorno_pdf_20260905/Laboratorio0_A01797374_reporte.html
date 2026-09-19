@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Laboratorio 0 - A01797374</title>
+  <style>
+    @page { size: letter; margin: 16mm; }
+    * { box-sizing: border-box; }
+    body {
+      color: #172033;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 11pt;
+      line-height: 1.45;
+      margin: 0;
+    }
+    h1, h2 { color: #063970; font-family: Arial, sans-serif; }
+    h1 { font-size: 22pt; margin: 0 0 4px; }
+    h2 { border-bottom: 1px solid #98b8d4; font-size: 14pt; margin: 22px 0 10px; padding-bottom: 4px; }
+    .meta { color: #40516b; margin: 0 0 18px; }
+    .answer {
+      background: #f3f8fc;
+      border-left: 4px solid #2876ad;
+      margin: 10px 0 14px;
+      padding: 10px 12px;
+      page-break-inside: avoid;
+    }
+    .answer strong { color: #063970; display: block; margin-bottom: 4px; }
+    .capture {
+      background: #121b2b;
+      border: 1px solid #2a3b55;
+      border-radius: 3px;
+      color: #eef5ff;
+      font-family: Consolas, "Courier New", monospace;
+      font-size: 8.7pt;
+      line-height: 1.38;
+      margin: 10px 0 16px;
+      padding: 13px;
+      page-break-inside: avoid;
+      white-space: pre-wrap;
+      overflow-wrap: anywhere;
+    }
+    .label { color: #0b5e9b; font-family: Arial, sans-serif; font-size: 9pt; font-weight: bold; text-transform: uppercase; }
+    .note { color: #40516b; font-size: 9.5pt; }
+    @media print {
+      h2 { break-after: avoid; }
+      .capture, .answer { break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+  <h1>Laboratorio 0 | Verificacion de entorno</h1>
+  <p class="meta">David Felipe Hernandez Chiapa &nbsp;|&nbsp; Matricula: A01797374 &nbsp;|&nbsp; Evidencia de ejecucion y respuestas</p>
+
+  <h2>Respuestas</h2>
+  <div class="answer">
+    <strong>1. Que pasos estan programados y que evidencia necesitarias para afirmar que el sistema elige su ruta?</strong>
+    Son 5 pasos: percibir, detectar, razonar, investigar y proponer. El codigo es bastante estatico y depende de la estructura de los datos. Si los datos cambian el codigo podria elegir otro cammino, sin embargo, siempre sigue los mismos pasos generales.
+  </div>
+  <div class="answer">
+    <strong>2. Que informacion puede consultar, que accion puede realizar y cual requeriria autorizacion humana?</strong>
+    Tiene acceso a informacion de datos de inventario y ventas. Estos mismos tienen informacion de puntos de venta y productos.
+  </div>
+  <div class="answer">
+    <strong>3. Que conclusion de la traza aceptarias y cual pedirias verificar antes de autorizar una reposicion?</strong>
+    La propuesta que realiza es una propuesta razonable pero para poder aceptarla me gustaria poder verificar el paso de razonamiento que la sustenta.
+  </div>
+
+  <h2>Evidencia de ejecucion</h2>
+  <p class="label">Captura 1 | Carga de libreria y datos</p>
+  <pre class="capture">pandas 3.0.6 listo
+Entorno listo para este laboratorio. 12,632 filas de ventas, 40 tiendas, 20 productos.</pre>
+
+  <p class="label">Captura 2 | Traza del flujo programado</p>
+  <pre class="capture">[1] PERCIBIR
+    Leo la ventana 2026-06-22 a 2026-06-28, inclusive
+    -&gt; 3,057 filas de venta; 2,440 de inventario
+
+[2] DETECTAR
+    Busco observaciones en cero; no prueban un quiebre continuo
+    -&gt; 193 combinaciones tienda-producto con al menos una fecha en cero;
+       111 con dos o mas fechas distintas
+
+[3] RAZONAR
+    Aproximo costo: fechas en cero x rotacion semanal / 7 x precio
+    -&gt; Maximo estimado: P007 en T0004, 6 fechas, $1,723.
+
+[4] INVESTIGAR
+    Cuento tiendas del mismo producto y de la misma zona
+    -&gt; 2 tiendas de la zona Centro, incluida la del caso,
+       tienen observaciones en cero en la ventana.
+
+[5] PROPONER
+    Muestro una propuesta para revision humana; no envio ni ejecuto ordenes
+    -&gt; Revisar existencias y abastecimiento de P007 en T0004;
+       verificar la causa y la necesidad antes de autorizar una reposicion.
+
+Traza completa: 5 pasos programados. Solo se leyeron archivos y se mostraron resultados en este notebook.</pre>
+
+  <p class="label">Captura 3 | Validacion de respuestas y comprobaciones tecnicas</p>
+  <pre class="capture">Respuesta 1: TEXTO REGISTRADO (sin evaluar)
+Respuesta 2: TEXTO REGISTRADO (sin evaluar)
+Respuesta 3: TEXTO REGISTRADO (sin evaluar)
+Hay texto en las tres respuestas. Revisa tus argumentos y sube el PDF con tus respuestas y evidencia de ejecucion.
+
+4/4 grupos de comprobaciones tecnicas en verde. No validan tus argumentos,
+la causa del quiebre ni una decision de reposicion.</pre>
+
+  <p class="note">Las capturas reproducen las salidas obtenidas al ejecutar el notebook localmente.</p>
+</body>
+</html>
