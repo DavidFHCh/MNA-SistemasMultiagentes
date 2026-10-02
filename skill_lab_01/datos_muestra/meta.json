@@ -1,0 +1,16 @@
+{
+ "seed": 42,
+ "variant": 0,
+ "sample": true,
+ "generado": "2026-07-19",
+ "fuente": "01_source/SHARED_SPECS.md v1.0",
+ "filas": {
+  "tiendas": 40,
+  "productos": 20,
+  "ventas": 12632,
+  "inventarios": 9760,
+  "precios_competencia": 218,
+  "promociones": 12,
+  "visitas": 120
+ }
+}

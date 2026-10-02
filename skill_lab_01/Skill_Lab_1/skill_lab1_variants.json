@@ -1,0 +1,28 @@
+{
+  "LAB1-A": {
+    "seed": 101,
+    "texto_tokens": {
+      "consulta_campo": 47,
+      "reporte_incidentes": 449,
+      "catalogo": 1580
+    },
+    "ratio_es_en": 1.32,
+    "pos_score": {
+      "inicio": 0.86,
+      "medio": 0.71,
+      "final": 0.88
+    },
+    "eval_20": {
+      "rapido": {
+        "aciertos": 13,
+        "costo_total": 1.09,
+        "latencia_media": 1.4
+      },
+      "capaz": {
+        "aciertos": 18,
+        "costo_total": 7.12,
+        "latencia_media": 6.3
+      }
+    }
+  }
+}

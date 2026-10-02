@@ -1,0 +1,5 @@
+tipo,entidades,fecha_ini,dur_dias,causa
+A1_quiebre,Norte|P007|9tiendas,2026-06-10,5,falla reposicion CD
+A1_quiebre,Sur|P007|12tiendas,2026-06-05,5,falla reposicion CD
+A1_quiebre,Bajio|P003|11tiendas,2026-06-08,9,falla reposicion CD
+A2_canibalizacion,Centro|P003,2026-06-06,14,promo mayoreo canibaliza tradicional
