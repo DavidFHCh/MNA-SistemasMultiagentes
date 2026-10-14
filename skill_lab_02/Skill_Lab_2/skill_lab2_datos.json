@@ -1,0 +1,16 @@
+{
+  "seed": 201,
+  "orden": [
+    "F0",
+    "F1",
+    "F2",
+    "F3",
+    "F4",
+    "F5",
+    "F6"
+  ],
+  "tienda": "T0118",
+  "producto": "P051",
+  "dias_captura": 34,
+  "presupuesto": 8
+}
