@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Skill Lab 2 - A01797374</title>
+  <style>
+    @page { size: letter; margin: 16mm; }
+    * { box-sizing: border-box; }
+    body { color: #172033; font-family: Georgia, "Times New Roman", serif; font-size: 10.5pt; line-height: 1.45; margin: 0; }
+    h1, h2, h3 { color: #063970; font-family: Arial, sans-serif; }
+    h1 { font-size: 22pt; margin: 0 0 4px; }
+    h2 { border-bottom: 1px solid #98b8d4; font-size: 14pt; margin: 22px 0 10px; padding-bottom: 4px; }
+    h3 { font-size: 11.5pt; margin: 0 0 7px; }
+    p { margin: 7px 0; }
+    .meta { color: #40516b; margin: 0 0 18px; }
+    .intro { border-left: 4px solid #2876ad; margin: 12px 0 16px; padding: 2px 0 2px 12px; }
+    .trace { border: 1px solid #b8cadc; margin: 12px 0; page-break-inside: avoid; }
+    .trace h3 { background: #eaf3fa; margin: 0; padding: 7px 9px; }
+    table { border-collapse: collapse; width: 100%; }
+    th, td { border-top: 1px solid #d6e0e9; padding: 6px 8px; text-align: left; vertical-align: top; }
+    th { background: #f3f8fc; color: #063970; font-family: Arial, sans-serif; font-size: 9pt; }
+    .step { text-align: center; width: 13%; }
+    .phase { font-weight: bold; text-transform: uppercase; width: 20%; }
+    .diagnosis { margin: 14px 0; page-break-inside: avoid; }
+    .diagnosis p { margin-left: 12px; }
+    .label { color: #0b5e9b; font-family: Arial, sans-serif; font-size: 9pt; font-weight: bold; text-transform: uppercase; }
+    .answer { background: #f3f8fc; border-left: 4px solid #2876ad; margin: 10px 0 14px; padding: 10px 12px; page-break-inside: avoid; }
+    .answer strong { color: #063970; display: block; margin-bottom: 4px; }
+    .control { margin: 9px 0; }
+    .control strong { color: #063970; }
+    @media print { h2 { break-after: avoid; } .trace, .diagnosis, .answer { break-inside: avoid; } }
+  </style>
+</head>
+<body>
+  <h1>Skill Lab 2 | Diagnóstico de registros de ejecución</h1>
+  <p class="meta">David Felipe Hernandez Chiapa &nbsp;|&nbsp; Matrícula: A01797374 &nbsp;|&nbsp; Distribuidora Cuauhtémoc</p>
+  <div class="intro"><strong>Propósito del reporte.</strong> Se revisan trazas simuladas de un agente que detecta quiebres de inventario. El diagnóstico identifica la primera fase que incumple su contrato; los eventos posteriores se consideran consecuencias de esa falla primaria.</div>
+
+  <h2>Tablas de trazas</h2>
+  <p>Las siguientes tablas reproducen los registros obtenidos al ejecutar el notebook. F0 es la referencia; F1 a F6 contienen una falla primaria.</p>
+
+  <section class="trace"><h3>F0 | Traza de referencia</h3><table><thead><tr><th class="step">Paso</th><th class="phase">Fase</th><th>Qué registró</th></tr></thead><tbody>
+    <tr><td class="step">1</td><td class="phase">Observar</td><td>Ventas e inventarios zona Bajío; detección de combinación crítica.</td></tr>
+    <tr><td class="step">2</td><td class="phase">Razonar</td><td>Costo estimado alto; buscar causas.</td></tr>
+    <tr><td class="step">3</td><td class="phase">Observar</td><td>Promoción activa del mismo producto en la zona.</td></tr>
+    <tr><td class="step">4</td><td class="phase">Evaluar</td><td>El criterio de conflicto del contrato se cumple.</td></tr>
+    <tr><td class="step">5</td><td class="phase">Paro</td><td>ESCALAMIENTO: caso preparado para el gerente con dos hipótesis.</td></tr>
+  </tbody></table></section>
+  <section class="trace"><h3>F1</h3><table><thead><tr><th class="step">Paso</th><th class="phase">Fase</th><th>Qué registró</th></tr></thead><tbody>
+    <tr><td class="step">1</td><td class="phase">Observar</td><td>Capturas de competencia: usa la más reciente sin revisar fecha (34 días).</td></tr>
+    <tr><td class="step">2</td><td class="phase">Razonar</td><td>El competidor bajó precio; conviene responder.</td></tr>
+    <tr><td class="step">3</td><td class="phase">Actuar</td><td>Escribe caso recomendando baja de precio.</td></tr>
+    <tr><td class="step">4</td><td class="phase">Paro</td><td>ÉXITO declarado.</td></tr>
+  </tbody></table></section>
+  <section class="trace"><h3>F2</h3><table><thead><tr><th class="step">Paso</th><th class="phase">Fase</th><th>Qué registró</th></tr></thead><tbody>
+    <tr><td class="step">1</td><td class="phase">Observar</td><td>No hay capturas para la tienda T0118.</td></tr>
+    <tr><td class="step">2</td><td class="phase">Razonar</td><td>Asume causa probable: entrada de competidor (sin evidencia).</td></tr>
+    <tr><td class="step">3</td><td class="phase">Actuar</td><td>Escribe caso con la causa asumida como hecho.</td></tr>
+    <tr><td class="step">4</td><td class="phase">Paro</td><td>ÉXITO declarado.</td></tr>
+  </tbody></table></section>
+  <section class="trace"><h3>F3</h3><table><thead><tr><th class="step">Paso</th><th class="phase">Fase</th><th>Qué registró</th></tr></thead><tbody>
+    <tr><td class="step">1</td><td class="phase">Planear</td><td>Plan: confirmar quiebre por falla del CD.</td></tr>
+    <tr><td class="step">2</td><td class="phase">Observar</td><td>Inventario del CD normal (contradice la premisa).</td></tr>
+    <tr><td class="step">3</td><td class="phase">Planear</td><td>Continúa el plan original sin revisarlo.</td></tr>
+    <tr><td class="step">4</td><td class="phase">Actuar</td><td>El caso atribuye el quiebre al CD.</td></tr>
+    <tr><td class="step">5</td><td class="phase">Paro</td><td>ÉXITO declarado.</td></tr>
+  </tbody></table></section>
+  <section class="trace"><h3>F4</h3><table><thead><tr><th class="step">Paso</th><th class="phase">Fase</th><th>Qué registró</th></tr></thead><tbody>
+    <tr><td class="step">1</td><td class="phase">Observar</td><td>Quiebre detectado en el producto P051.</td></tr>
+    <tr><td class="step">2</td><td class="phase">Actuar</td><td>Consulta ventas del producto P052 (argumento no validado).</td></tr>
+    <tr><td class="step">3</td><td class="phase">Razonar</td><td>Concluye con datos del producto equivocado.</td></tr>
+    <tr><td class="step">4</td><td class="phase">Paro</td><td>ÉXITO declarado.</td></tr>
+  </tbody></table></section>
+  <section class="trace"><h3>F5</h3><table><thead><tr><th class="step">Paso</th><th class="phase">Fase</th><th>Qué registró</th></tr></thead><tbody>
+    <tr><td class="step">1</td><td class="phase">Actuar</td><td>Borrador de caso generado.</td></tr>
+    <tr><td class="step">2</td><td class="phase">Evaluar</td><td>El propio modelo califica su borrador: «excelente calidad».</td></tr>
+    <tr><td class="step">3</td><td class="phase">Paro</td><td>ÉXITO declarado sin criterios externos.</td></tr>
+  </tbody></table></section>
+  <section class="trace"><h3>F6</h3><table><thead><tr><th class="step">Paso</th><th class="phase">Fase</th><th>Qué registró</th></tr></thead><tbody>
+    <tr><td class="step">1</td><td class="phase">Observar</td><td>Señal ambigua.</td></tr>
+    <tr><td class="step">2</td><td class="phase">Razonar</td><td>Necesito más datos.</td></tr>
+    <tr><td class="step">3</td><td class="phase">Observar</td><td>Misma consulta repetida.</td></tr>
+    <tr><td class="step">4</td><td class="phase">Razonar</td><td>Necesito más datos.</td></tr>
+    <tr><td class="step">5</td><td class="phase">Observar</td><td>Misma consulta repetida.</td></tr>
+    <tr><td class="step">6</td><td class="phase">Paro</td><td>PRESUPUESTO AGOTADO sin caso ni declaración.</td></tr>
+  </tbody></table></section>
+
+  <h2>Seis diagnósticos</h2>
+  <table>
+    <thead><tr><th>Traza</th><th>Evento donde falló</th><th>Paso</th></tr></thead>
+    <tbody>
+      <tr><td>F1</td><td>Observar</td><td>1</td></tr>
+      <tr><td>F2</td><td>Razonar</td><td>2</td></tr>
+      <tr><td>F3</td><td>Planear</td><td>3</td></tr>
+      <tr><td>F4</td><td>Actuar</td><td>2</td></tr>
+      <tr><td>F5</td><td>Evaluar</td><td>2</td></tr>
+      <tr><td>F6</td><td>Paro</td><td>6</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Interpretación</h2>
+  <div class="answer"><strong>Pregunta 1. Controles que habrían detenido cada falla</strong>
+    <div class="control"><strong>F1:</strong> Verificar que la observacion contenga fechas de las mediciones. En el paso de razonar.</div>
+    <div class="control"><strong>F2:</strong> Verificar que la evidencia este presente y con su respectiva fecha. En el paso de razonar.</div>
+    <div class="control"><strong>F3:</strong> Crear un paso estructural intermedio que verifique la consistencia de las observaciones con respecto al estado. En el paso de planear.</div>
+    <div class="control"><strong>F4:</strong> Validar los argumentos contra el estado antes de ejecutar. En el paso de actuar.</div>
+    <div class="control"><strong>F5:</strong> Usar un verificador externo. En el paso de evaluar.</div>
+    <div class="control"><strong>F6:</strong> Se deberia de realizar una declaracion de que no se realizo trabajo por falta de evidencia. En el paso de paro.</div>
+  </div>
+  <div class="answer"><strong>Pregunta 2. Propuesta de cierre de F6 por presupuesto</strong><p>En el caso de F6, si sabemos en las trazas la razon por la que no se realizo trabajo alguno. Seria de gran ayuda para la persona que lee las respuestas saber lo siguiente:</p><ul><li>Que informacion se intento de obtener.</li><li>Existe registro previo? De cuando?</li><li>Y en efecto, la razon del paro, el limite de pasos fue alcanzado.</li></ul><p>Esta informacion puede ser usada para poder escalar el evento al area correcta y obtener la informacion requerida de manera pronta.</p></div>
+
+  <h2>Conclusiones</h2>
+  <div class="answer"><strong>El diagnóstico que más te costó</strong>El ultimo diagnostico, la traza 6, al tener el error como tal en la clausula de paro por no dar ningun tipo de aviso o notificacion de la causa del paro anticipado.</div>
+  <div class="answer"><strong>La verificación que instalarías primero</strong>Buscaria que podamos estar seguros que la evidencia que estamos obteniendo tenga sus respectivas fechas y que si no se encuentra nada se den detalles de que se busco para poder armar el caso de paro.</div>
+  <div class="answer"><strong>La huella de fases en tu organización</strong>El crear un equipo de trabajo, observando lo que el proyeto es, razonar sobre lo que se necesita en terminos de equipo, planear en que etapas se requeriria cada elemento, actuar al agregar los elementos al equipo en el momento adecuado y evaluar si el desempenio del equipo es el adecuado al medir la calidad de los entregables y si se llego a la meta en el tiempo especificado.</div>
+
+  <h2>Declaración de uso de IA</h2>
+  <div class="answer">Se uso GPT5.6 Terra para dar formato y crear el PDF de resultados.</div>
+</body>
+</html>
