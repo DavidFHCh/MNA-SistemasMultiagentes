@@ -5,10 +5,11 @@ description = ""
 authors = [
     {name = "David Felipe Hernandez Chiapa",email = "davifep.96@gmail.com"}
 ]
-requires-python = ">=3.14"
+requires-python = ">=3.14,<4"
 dependencies = [
     "pandas (>=3.0.6,<4.0.0)",
-    "matplotlib (>=3.11.2,<4.0.0)"
+    "matplotlib (>=3.11.2,<4.0.0)",
+    "reportlab (>=5.1.0,<6.0.0)"
 ]
 
 
